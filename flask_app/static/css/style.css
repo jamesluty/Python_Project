@@ -1,0 +1,236 @@
+/* navbar css */
+.navbar {
+    background-color: rgb(160,196,255);
+    border-bottom: 2px solid black;
+    padding: 0px;
+    margin: 0px;
+    position: sticky;
+    top: 0;
+    width: 100%;
+}
+
+.caret {
+    width: 14px;
+    height: 10px;
+}
+
+.dropdown:hover {
+    background-color: blue;
+}
+
+.dropdown {
+    float: left;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: blue;
+}
+
+.dropdown_content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown .dropbtn {
+    font-size: 23px;
+    border: none;
+    outline: none;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.dropdown_content {
+    display: none;
+    position: absolute;
+    background-color: rgb(160,196,255);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown_content {
+    display: flex;
+    flex-direction: column;
+}
+
+.site_name {
+    font-family: cursive;
+    padding-left: 10px;
+}
+
+.search {
+    padding: 3px 10px;
+    width: 300px;
+}
+
+.link_button {
+    background-color: blue;
+    border: 2px solid black;
+    color: white;
+    padding: 5px 20px;
+    margin-right: 20px;
+    text-decoration: none;
+}
+
+.login {
+    margin-top: 5px;
+}
+
+.login .cart:hover {
+    background-color: rgb(160,196,255);
+}
+
+.login a:hover {
+    color: black;
+}
+
+.cart {
+    margin-right: 10px;
+    margin-bottom: 5px;
+    width: 35px;
+}
+
+/* Homepage css */
+.categories {
+    background-color: blue;
+    color: white;
+    padding: 3px 5px;
+    width: 150px;
+}
+
+.categories option {
+    padding: 5px;
+}
+
+.page_header {
+    margin: 20px 0px;
+    text-align: center;
+}
+
+.cat_wrapper1, .cat_wrapper2 {
+    display: flex;
+    gap: 10px;
+    justify-content: space-evenly;
+    margin: 30px 0px;
+    text-align: center;
+}
+
+.category {
+    background-color: white;
+    border: 3px solid black;
+    color: black;
+    height: 350px;
+    padding: 10px;
+    text-decoration: none;
+    width: 300px;
+}
+
+.category h1 {
+    margin-bottom: 30px;
+}
+
+/* Login and Registration Pages */
+.alert {
+    color: red;
+    margin: 0px;
+    padding: 0px;
+}
+.login_wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.login_form {
+    background-color: rgb(160,196,255);
+    border: 3px solid black;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    width: 400px;
+}
+
+.login_form label {
+    margin-top: 10px;
+}
+
+.login_buttons {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* Products page */
+.all_products {
+    margin: 40px 10% 0px 10%;
+}
+
+.product {
+    border: 3px solid black;
+    display: flex;
+    padding: 20px;
+}
+
+/* Account page */
+.account_wrapper {
+    gap: 100px;
+    margin: 40px 10% 0px 10%;
+}
+
+.account {
+    background-color: white;
+    border: 3px solid black;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.info {
+    display: flex;
+}
+
+.info span {
+    font-weight: bold;
+}
+
+.info_left, .info_right {
+    flex: 1;
+}
+
+.section_header {
+    text-align: center;
+    border-bottom: 3px solid black;
+    padding-bottom: 15px;
+}
+
+/* Sell product html page */
+.sell_wrapper {
+    background-color: rgb(160,196,255);
+    border: 3px solid black;
+    margin: 40px 10% 0px 10%;
+}
+
+.sell_form {
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+}
+
+.upload_form {
+    display: flex;
+    padding: 20px;
+}
+
+.img_upload {
+    flex: 1;
+}
+
+#category {
+    width: 100px;
+}
