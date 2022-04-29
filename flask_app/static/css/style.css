@@ -168,14 +168,49 @@
 }
 
 /* Products page */
+.products_wrapper {
+    display: flex;
+    gap: 10px;
+    margin: 40px 5% 0px 5%;
+}
+
+.sort_products {
+    border: 3px solid black;
+    flex: 1;
+}
+
+.sort_header {
+    text-align: center;
+}
+
 .all_products {
-    margin: 40px 10% 0px 10%;
+    border: 3px solid black;
+    display: flex;
+    flex: 5;
+    padding: 20px;
+}
+
+.img_box {
+    border: 2px solid black;
+    flex: 1;
+    padding: 10px;
+}
+
+.product_img {
+    height: 150px;
+    width: 200px;
 }
 
 .product {
-    border: 3px solid black;
     display: flex;
+    flex-direction: column;
+    flex: 5;
     padding: 20px;
+}
+
+.description {
+    display: flex;
+    justify-content: space-between;
 }
 
 /* Account page */
@@ -184,8 +219,13 @@
     margin: 40px 10% 0px 10%;
 }
 
+.all_selling {
+    align-items: center;
+    padding-top: 15px;
+    display: flex;
+}
+
 .account {
-    background-color: white;
     border: 3px solid black;
     padding: 20px;
     margin-bottom: 20px;
@@ -204,16 +244,24 @@
 }
 
 .section_header {
-    text-align: center;
+    align-items: center;
     border-bottom: 3px solid black;
+    display: flex;
+    justify-content: space-evenly;
     padding-bottom: 15px;
+    text-align: center;
+}
+
+.product_category {
+    text-decoration: underline;
 }
 
 /* Sell product html page */
 .sell_wrapper {
     background-color: rgb(160,196,255);
     border: 3px solid black;
-    margin: 40px 10% 0px 10%;
+    margin: 20px 20% 40px 20%;
+    padding-top: 10px;
 }
 
 .sell_form {
@@ -224,7 +272,7 @@
 
 .upload_form {
     display: flex;
-    padding: 20px;
+    padding: 5px 20px 20px 20px;
 }
 
 .img_upload {
@@ -233,4 +281,29 @@
 
 #category {
     width: 100px;
+}
+
+#price {
+    width: 100px;
+}
+
+.sell_button {
+    background-color: blue;
+    border: 2px solid black;
+    color: white;
+    padding: 5px 20px;
+    margin-top: 20px;
+    width: 100px;
+}
+
+#upload_widget {
+    width: 105px;
+}
+
+.seller_actions {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 20px;
+    text-align: center;
 }

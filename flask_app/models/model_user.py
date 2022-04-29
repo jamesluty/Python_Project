@@ -1,6 +1,7 @@
 from flask_app.config.mysqlconnection import connectToMySQL
 from flask_app import DATABASE, bcrypt
 from flask import flash, session
+from flask_app.models import model_product
 import re
 
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
@@ -19,6 +20,7 @@ class User:
         self.password = data['password']
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
+        self.products = []
 
     @classmethod
     def create_user(cls, data):
@@ -45,6 +47,32 @@ class User:
             user = cls(results[0])
             return user
         
+        return False
+
+    @classmethod
+    def get_all_selling(cls, data):
+        query = "SELECT * FROM users LEFT JOIN products ON users.id = products.user_id WHERE users.id = %(id)s;"
+        results = connectToMySQL(DATABASE).query_db(query, data)
+        user = cls(results[0])
+
+        if results:
+            for item in results:
+                product_data = {
+                    'id': item['products.id'],
+                    'url': item['url'],
+                    'summary': item['summary'],
+                    'description': item['description'],
+                    'category': item['category'],
+                    'price': item['price'],
+                    'sold': item['sold'],
+                    'created_at': item['products.created_at'],
+                    'updated_at': item['products.updated_at'],
+                    'user_id': item['user_id']
+                }
+                temp_product = model_product.Product(product_data)
+                user.products.append(temp_product)
+            return user
+
         return False
 
 

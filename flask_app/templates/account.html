@@ -56,8 +56,37 @@
             </div>
         </div>
         <div class="account">
-            <h3 class="section_header">Selling History</h3>
+            <div class="section_header">
+                <h3>Selling History</h3>
+                <a href="/sell">Sell a Product</a>
+            </div>
+            {% if all_selling %}
+            <div class="all_selling">
+                {% for product in all_selling.products %}
+                <div class="img_box">
+                    <img class="product_img" src="{{ product.url }}" alt="no image">
+                </div>
+                <div class="product">
+                    <h3 class="product_category">Category: {{ product.category }}</h3>
+                    <h3 class="product_name">{{ product.summary }}</h3>
+                    <div class="description">
+                        <p>{{ product.description }}</p>
+                        <p>Price: ${{ product.price }}</p>
+                    </div>
+                </div>
+                <div class="seller_actions">
+                    {% if product.sold == 0 %}
+                    <a href="/delete/{{ product.id }}" class="link_button">Delete</a>
+                    <a href="/sold/{{ product.id }}" class="link_button">Mark Sold</a>
+                    {% else %}
+                    <h3 class="alert">Sold</h3>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+            {% else %}
             <p>No selling history at this time</p>
+            {% endif %}
         </div>
         <div class="account">
             <h3 class="section_header">Purchase History</h3>

@@ -60,6 +60,11 @@ def create_user():
 
 @app.route("/account")
 def user_account():
-    id = session['uuid']
-    user = User.get_user({'id': id})
-    return render_template("account.html", user=user)
+    if 'uuid' in session:
+        logged_in = 'yes'
+    else:
+        logged_in = 'no'
+    user = User.get_user({'id': session['uuid']})
+    selling = User.get_all_selling({'id': session['uuid']})
+    print(selling.products)
+    return render_template("account.html", user=user, all_selling=selling, logged_in=logged_in)
