@@ -57,8 +57,9 @@
         </div>
         <div class="account">
             <div class="section_header">
+                <a class="link_button" href="/sell">Sell a Product</a>
                 <h3>Selling History</h3>
-                <a href="/sell">Sell a Product</a>
+                <a  class="link_button" href="/my/messages">Messages</a>
             </div>
             {% if all_selling %}
             <div class="all_selling">
@@ -74,7 +75,7 @@
                         <p>Price: ${{ product.price }}</p>
                     </div>
                 </div>
-                <div class="seller_actions">
+                <div class="actions">
                     {% if product.sold == 0 %}
                     <a href="/delete/{{ product.id }}" class="link_button">Delete</a>
                     <a href="/sold/{{ product.id }}" class="link_button">Mark Sold</a>

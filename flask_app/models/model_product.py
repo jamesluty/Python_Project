@@ -19,7 +19,7 @@ class Product:
 
     @classmethod
     def get_products(cls, data):
-        query = "SELECT * FROM products WHERE category = %(category)s;"
+        query = "SELECT * FROM products WHERE category = %(category)s AND user_id != %(id)s;"
         results = connectToMySQL(DATABASE).query_db(query, data)
         categories = []
 
@@ -28,6 +28,17 @@ class Product:
                 categories.append(item)
 
             return categories
+
+        return False
+
+    @classmethod
+    def get_one_selling(cls, data):
+        query = "SELECT * FROM products WHERE id = %(id)s AND user_id = %(user_id)s;"
+        results = connectToMySQL(DATABASE).query_db(query, data)
+
+        if results:
+            product = cls(results[0])
+            return product
 
         return False
 

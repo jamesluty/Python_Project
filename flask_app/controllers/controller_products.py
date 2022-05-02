@@ -8,9 +8,11 @@ from flask_app.models.model_product import Product
 def category(category):
     if 'uuid' in session:
         logged_in = 'yes'
+        id = session['uuid']
     else:
         logged_in = 'no'
-    all_products = Product.get_products({'category': category})
+        id = 0
+    all_products = Product.get_products({'category': category, 'id': id})
     category = category.capitalize()
     if category == 'Car_seats':
         category = "Car Seats"

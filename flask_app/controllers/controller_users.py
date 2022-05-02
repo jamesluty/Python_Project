@@ -58,6 +58,15 @@ def create_user():
 
     return redirect('/')
 
+@app.route("/message/<int:user_id>/<int:id>")
+def send_message(user_id, id):
+    product = Product.get_one_selling({'id': id, 'user_id': user_id})
+    return render_template("message.html", product=product)
+
+# @app.route("/message/<int:user_id>")
+# def message_user(user_id):
+#     User.send_message({'id': user_id})
+
 @app.route("/account")
 def user_account():
     if 'uuid' in session:
@@ -66,5 +75,8 @@ def user_account():
         logged_in = 'no'
     user = User.get_user({'id': session['uuid']})
     selling = User.get_all_selling({'id': session['uuid']})
-    print(selling.products)
     return render_template("account.html", user=user, all_selling=selling, logged_in=logged_in)
+
+@app.route("/cart")
+def view_cart():
+    return render_template("cart.html")

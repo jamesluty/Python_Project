@@ -51,11 +51,11 @@ class User:
 
     @classmethod
     def get_all_selling(cls, data):
-        query = "SELECT * FROM users LEFT JOIN products ON users.id = products.user_id WHERE users.id = %(id)s;"
+        query = "SELECT * FROM users JOIN products ON users.id = products.user_id WHERE users.id = %(id)s;"
         results = connectToMySQL(DATABASE).query_db(query, data)
-        user = cls(results[0])
 
         if results:
+            user = cls(results[0])
             for item in results:
                 product_data = {
                     'id': item['products.id'],
@@ -74,7 +74,6 @@ class User:
             return user
 
         return False
-
 
     @staticmethod
     def logout():

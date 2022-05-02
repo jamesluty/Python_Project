@@ -78,6 +78,10 @@
     text-decoration: none;
 }
 
+.link_button:hover {
+    color: black;
+}
+
 .login {
     margin-top: 5px;
 }
@@ -184,6 +188,7 @@
 }
 
 .all_products {
+    align-items: center;
     border: 3px solid black;
     display: flex;
     flex: 5;
@@ -194,6 +199,7 @@
     border: 2px solid black;
     flex: 1;
     padding: 10px;
+    text-align: center;
 }
 
 .product_img {
@@ -247,7 +253,7 @@
     align-items: center;
     border-bottom: 3px solid black;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     padding-bottom: 15px;
     text-align: center;
 }
@@ -300,10 +306,35 @@
     width: 105px;
 }
 
-.seller_actions {
+.product {
+    flex: 4;
+}
+
+.actions {
     display: flex;
     flex-direction: column;
     flex: 1;
     gap: 20px;
+    text-align: center;
+}
+
+/* Message Page */
+.message_wrapper {
+    border: 3px solid black;
+    gap: 10px;
+    margin: 40px 15% 0px 15%;
+}
+
+.product_info {
+    align-items: center;
+    border-bottom: 3px solid black;
+    display: flex;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+.message_form {
+    display: block;
+    padding: 20px;
     text-align: center;
 }
